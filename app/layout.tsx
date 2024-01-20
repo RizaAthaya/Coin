@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { inter, poppins } from "./fonts";
+import Navbar from "@/components/shared/navbar";
 
 export const metadata: Metadata = {
   title: "Coinvestasi",
@@ -15,6 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${inter.variable}`}>
+        {/* NAVBAR  */}
+        <Navbar />
+
+        {/* CONTENT  */}
         {children}
       </body>
     </html>

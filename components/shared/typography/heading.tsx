@@ -6,6 +6,7 @@ interface HeadingProps {
 }
 
 const Heading = ({ children, type }: HeadingProps) => {
+  // STYLE LIST
   const styles = {
     h1: "font-bold text-2xl leading-8 md:font-bold md:text-[32px] md:leading-[44px]",
     h2: "font-bold text-xl leading-7 md:font-bold md:text-2xl md:leading-7",
@@ -13,6 +14,7 @@ const Heading = ({ children, type }: HeadingProps) => {
     h4: "font-bold text-sm leading-6",
   };
 
+  // GET TAG <h1/> <h2/> <h3/> <h4/> 
   const Element = type as keyof JSX.IntrinsicElements;
 
   return <Element className={styles[type]}>{children}</Element>;

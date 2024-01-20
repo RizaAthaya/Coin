@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-semibold text-sm leading-5 bg-[#1E386B] hover:bg-[#33466c]">
+    <div className="font-semibold text-sm leading-5 bg-white">
       TEST
     <Heading type={"h1"}>Title</Heading>
     <Heading type={"h2"}>Title</Heading>

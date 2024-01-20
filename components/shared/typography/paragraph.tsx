@@ -6,6 +6,7 @@ interface ParagraphProps {
 }
 
 const Paragraph = ({ children, type }: ParagraphProps) => {
+  // STYLE LIST
   const styles = {
     lg: "text-base leading-6 md:text-xl md:leading-8 font-inter",
     md: "text-sm leading-5 md:text-base md:leading-6 font-inter",
