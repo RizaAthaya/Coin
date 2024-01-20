@@ -10,8 +10,8 @@ interface ButtonProps {
 const Button = ({ children, type, onClick, variation }: ButtonProps) => {
 
   const colors = {
-    secondary: "bg-amber-400" ,
-    primary: "bg-blue-500 hover:bg-blue-700",
+    secondary: "bg-[#1E386B] hover:bg-[#33466c] font-semibold text-sm leading-5" ,
+    primary: "bg-[#F2B124] hover:bg-[#efbd52] text-base font-normal leading-6 font-medium",
   };
 
   const getColor = () => {
@@ -22,7 +22,7 @@ const Button = ({ children, type, onClick, variation }: ButtonProps) => {
     <button
       type={type}
       onClick={onClick}
-      className={`text-white text-base font-medium text-center px-6 py-4 rounded  ${getColor()}`}
+      className={`text-white text-center px-6 py-4 rounded ${getColor()}`}
     >
       {children}
     </button>

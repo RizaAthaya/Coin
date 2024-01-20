@@ -9,7 +9,3 @@ body {
 button {
   font-family: var(--font-inter);
 }
-
-.tracking-custom {
-  letter-spacing: 1%;
-}
