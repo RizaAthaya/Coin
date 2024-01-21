@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { inter, poppins } from "./fonts";
 import Navbar from "@/components/shared/navbar";
+import Head from "next/head";
+import Coin from "../public/Coin.svg";
 
 export const metadata: Metadata = {
   title: "Coinvestasi",
@@ -20,9 +22,7 @@ export default function RootLayout({
         <Navbar />
 
         {/* CONTENT  */}
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );

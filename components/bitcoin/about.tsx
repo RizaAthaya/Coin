@@ -17,8 +17,8 @@ const About = () => {
           <Image
             src={PhotoProfile}
             alt={"foto penulis"}
-            width={64}
-            height={64}
+            priority
+            className="w-[64px] h-[64px]"
           />
         </div>
         <div className="flex flex-col gap-2 lg:max-w-none max-w-[calc(100%-80px)]">

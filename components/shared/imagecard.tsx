@@ -31,8 +31,8 @@ const ImageCard = ({ text, image }: ImageCardProps) => {
         <Image
           src={image}
           alt={"image"}
-          layout="fill"
-          className="rounded-br-sm rounded-tr-sm"
+          fill
+          className="rounded-br-sm rounded-tr-sm w-auto h-auto"
         />
       </div>
     </div>

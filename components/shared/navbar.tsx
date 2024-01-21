@@ -21,17 +21,19 @@ export const navItems: NavItem[] = [
 
 const Navbar = () => {
   return (
-    <nav className="lg:w-[1010px] custom:w-[1200px] flex justify-between lg:px-0 px-4 py-4 lg:py-6 items-center mx-auto">
-      {/* LOGO  */}
-      <div className="w-[140px] lg:w-[182px] cursor-pointer">
-        <Image src={CoinvestasiLogo} alt="Logo Coinvestasi" />
+    <nav className="w-screen bg-white lg:flex lg:justify-center fixed top-0 z-50">
+      <div className="bg-white lg:w-[1010px] custom:w-[1200px] flex justify-between lg:px-0 px-4 py-4 lg:py-6 items-center mx-auto">
+        {/* LOGO  */}
+        <div className="w-[140px] lg:w-[182px] cursor-pointer">
+          <Image src={CoinvestasiLogo} alt="Logo Coinvestasi" />
+        </div>
+
+        {/* NAV for Desktop ver. */}
+        <Desktop />
+
+        {/* NAV for Mobile ver.  */}
+        <Mobile />
       </div>
-
-      {/* NAV for Desktop ver. */}
-      <Desktop />
-
-      {/* NAV for Mobile ver.  */}
-      <Mobile />
     </nav>
   );
 };

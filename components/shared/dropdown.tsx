@@ -31,7 +31,7 @@ const Dropdown = ({ label }: DropdownProps) => {
 
       {/* DROPDOWN  */}
       {isOpen && (
-        <ul className="font-normal text-sm lg:text-lg leading-6 absolute top-full lg:shadow-slate-200 lg:shadow-xl left-0 bg-white w-48 rounded px-5 py-5 flex flex-col font-inter transition-opacity duration-300 opacity-100">
+        <ul className="font-normal text-sm lg:text-lg leading-6 absolute top-full lg:shadow-slate-200 lg:shadow-xl left-0 bg-white w-48 rounded px-5 py-5 flex flex-col font-inter transition-opacity duration-300 opacity-100 z-50">
           {Array.from({ length: 4 }, (_, index) => (
             <li
               key={index}

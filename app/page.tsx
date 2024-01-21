@@ -15,9 +15,8 @@ export default function Home() {
       <Image
         src={Bitcoin}
         alt={"bitcoin"}
+        priority
         className="lg:hidden block w-screen h-[356px] object-cover z-0"
-        width={375}
-        height={356}
       />
     
       <div className="bg-white lg:mt-0 mt-4 lg:p-0 py-6 px-4 lg:rounded-none rounded top-[260px] lg:top-0 lg:max-w-none max-w-[calc(100vw-32px)] z-10 absolute lg:relative w-screen">

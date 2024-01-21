@@ -16,8 +16,25 @@ import ImageCard from "../shared/imagecard";
 import Table from "./table";
 import List from "../shared/list";
 import Paragraphs from "../shared/paragraphs";
+import { getAuthor, getData, getName } from "@/utils/bitcoin/api";
+import { formatDate } from "@/utils/date";
 
-const Content = () => {
+const Content = async () => {
+  let relatedContent = [];
+  const tag = 281;
+  const data = await getData(tag);
+  const nameTag = await getName(tag);
+  const author = await getAuthor(data[0].author);
+
+  for (let index = 0; index < 3; index++) {
+    relatedContent.push({
+      title: data[index].title.rendered,
+      date: data[index].date_gmt,
+      tag: nameTag.name,
+      author: author.name,
+    });
+  }
+
   return (
     <section className="flex custom:pl-[72px] gap-2 custom:gap-8 lg:w-[1010px] custom:w-[1200px] mx-auto mt-10 max-w-full lg:max-w-none w-full">
       <main className="p-0 m-0 flex flex-col gap-6 max-w-full lg:max-w-[calc(100%-290px)]">
@@ -145,50 +162,54 @@ const Content = () => {
         <div className="flex flex-col gap-4">
           <Heading type={"h2"}>Related</Heading>
 
-          <div className="flex flex-col gap-2">
-            <Paragraph
-              type={"caption"}
-              className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium px-2 py-1 w-fit"
-            >
-              Technology
-            </Paragraph>
-            <Paragraph
-              className="font-poppins text-black font-semibold"
-              type={"sm"}
-            >
-              FTX Siapkan Dana $2 Miliar untuk Investasi Project Web3
-            </Paragraph>
-            <Paragraph
-              type={"caption"}
-              className="text-[3A6B0C0] font-semibold"
-            >
-              Jane Doe · Rabu, 19 January 2021
-            </Paragraph>
-          </div>
-
-          {/* TOPIK - TAGS  */}
-          <div className="flex flex-col gap-4">
-            <Heading type={"h2"}>Topik lainnya</Heading>
-            <div className="flex flex-wrap">
+          {relatedContent.map((item, index) => {
+            return (
+              <div key={index} className="flex flex-col gap-2 cursor-pointer">
+                <Paragraph
+                  type={"caption"}
+                  className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium px-2 py-1 w-fit"
+                >
+                  {item.tag}
+                </Paragraph>
+                <Paragraph
+                  className="font-poppins text-black font-semibold hover:underline"
+                  type={"sm"}
+                >
+                  {item.title}
+                </Paragraph>
+                <Paragraph
+                  type={"caption"}
+                  className="text-[#A6B0C0] font-semibold"
+                >
+                  {item.author} · {formatDate(item.date)}
+                </Paragraph>
+              </div>
+            );
+          })}
+        </div>
+        {/* TOPIK - TAGS  */}
+        <div className="flex flex-col gap-4">
+          <Heading type={"h2"}>Topik lainnya</Heading>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Topics1",
+              "Topics 2",
+              "Topics 3",
+              "Topics 4",
+              "Topics 5",
+              "Topics 6",
+              "Topics 7",
+              "Topics 8",
+              "Topics 9",
+            ].map((topic, index) => (
               <Paragraph
+                key={index}
                 type={"caption"}
-                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2  w-fit"
+                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2 w-fit"
               >
-                Topics1
+                {topic}
               </Paragraph>
-              <Paragraph
-                type={"caption"}
-                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2  w-fit"
-              >
-                Topics2
-              </Paragraph>
-              <Paragraph
-                type={"caption"}
-                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2  w-fit"
-              >
-                Topics 3
-              </Paragraph>
-            </div>
+            ))}
           </div>
         </div>
       </aside>
