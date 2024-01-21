@@ -4,9 +4,10 @@ import { ChevronDown, ChevronUp } from "./icons";
 
 interface DropdownProps {
   label: string;
+  items?: string[];
 }
 
-const Dropdown = ({ label }: DropdownProps) => {
+const Dropdown = ({ label, items }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdownClick = () => {
@@ -15,7 +16,6 @@ const Dropdown = ({ label }: DropdownProps) => {
 
   return (
     <div className="relative">
-        
       {/* LABEL  */}
       <div
         className="flex items-center gap-[2px] cursor-pointer lg:hover:underline lg:justify-normal justify-between transition-colors duration-300 hover:text-[#1E386B]"
@@ -31,13 +31,13 @@ const Dropdown = ({ label }: DropdownProps) => {
 
       {/* DROPDOWN  */}
       {isOpen && (
-        <ul className="font-normal text-sm lg:text-lg leading-6 absolute top-full lg:shadow-slate-200 lg:shadow-xl left-0 bg-white w-48 rounded px-5 py-5 flex flex-col font-inter transition-opacity duration-300 opacity-100 z-50">
-          {Array.from({ length: 4 }, (_, index) => (
+        <ul className="font-normal text-sm lg:text-lg leading-6 relative lg:absolute top-full lg:shadow-slate-200 lg:shadow-xl left-0 bg-white w-52 rounded lg:px-5 lg:py-5 px-2 py-2 gap-1 lg:gap-0 flex flex-col font-inter transition-opacity duration-300 opacity-100 lg:z-50">
+          {items?.map((item, index) => (
             <li
               key={index}
               className="cursor-pointer lg:px-4 lg:py-3 hover:bg-slate-100 rounded transition-colors duration-300"
             >
-              Material {index + 1}
+              {item}
             </li>
           ))}
         </ul>

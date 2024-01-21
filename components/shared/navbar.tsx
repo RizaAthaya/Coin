@@ -4,18 +4,22 @@ import CoinvestasiLogo from "../../public/CoinvestasiLogo.svg";
 import Desktop from "./navbar/desktop";
 import Mobile from "./navbar/mobile";
 
-interface NavItem {
+export interface NavItem {
   label: string;
   link?: string;
+  items?: string[];
 }
 
 export const navItems: NavItem[] = [
-  { label: "Bitcoin", link: undefined },
-  { label: "Aplikasi" },
-  { label: "Berita", link: "/berita" },
+  { label: "Bitcoin", items: ["Beli Bitcoin", "Bitcoin Gratis", "Mining Bitcoin"] },
+  { label: "Aplikasi", items: ["Aplikasi Bitcoin", "Aplikasi Futures"] },
+  {
+    label: "Berita",
+    items: ["Berita Bitcoin", "Berita NFT", "Berita Harga", "Siaran Pers"],
+  },
   { label: "Blockchain", link: "/blockchain" },
-  { label: "Defi" },
-  { label: "NFT" },
+  { label: "Defi", items: ["Defi", "Staking"] },
+  { label: "NFT", items: ["NFT", "Gaming", "Art"] },
   { label: "Acara", link: "/acara" },
 ];
 

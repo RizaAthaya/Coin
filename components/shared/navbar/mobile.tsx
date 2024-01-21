@@ -26,7 +26,6 @@ const Mobile = () => {
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        
         {/* EXIT ICON  */}
         <div className="flex justify-end" onClick={handleClick}>
           <Exit />
@@ -34,19 +33,18 @@ const Mobile = () => {
 
         {/* NAV LIST  */}
         <ul className="flex flex-col gap-0 font-medium text-base leading-6 pt-2">
-          {navItems.map(({ label, link }, index) => (
+          {navItems.map(({ label, link, items }, index) => (
             <li key={index} className="p-2">
               {link ? (
                 <Link href={link} className="font-medium text-base leading-6">
                   {label}
                 </Link>
               ) : (
-                <Dropdown label={label} />
+                <Dropdown label={label} items={items} />
               )}
             </li>
           ))}
         </ul>
-
       </div>
     </>
   );

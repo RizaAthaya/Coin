@@ -10,7 +10,7 @@ const Desktop = () => {
     <>
       {/* NAVLIST  */}
       <ul className="hidden lg:flex gap-3 custom:gap-4 font-medium text-sm custom:text-base leading-6">
-        {navItems.map(({ label, link }, index) => (
+        {navItems.map(({ label, link, items }, index) => (
           <li key={index} className="p-2">
             {link ? (
               <Link
@@ -20,7 +20,7 @@ const Desktop = () => {
                 {label}
               </Link>
             ) : (
-              <Dropdown label={label} />
+              <Dropdown label={label} items={items}/>
             )}
           </li>
         ))}
