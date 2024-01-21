@@ -1,7 +1,12 @@
 import React from "react";
-import { kepemilikanList, paragraphs, paragraphs4, pasokanList } from "@/utils/bitcoin/data";
+import {
+  kepemilikanList,
+  paragraphs,
+  paragraphs4,
+  pasokanList,
+} from "@/utils/bitcoin/data";
 
-// COMPONENTS 
+// COMPONENTS
 import Paragraph from "../shared/typography/paragraph";
 import Heading from "../shared/typography/heading";
 import Button from "@/components/shared/button";
@@ -14,8 +19,8 @@ import Paragraphs from "../shared/paragraphs";
 
 const Content = () => {
   return (
-    <section className="flex pl-[72px] gap-8 lg:w-[1010px] custom:w-[1200px] mx-auto mt-10">
-      <main className="p-0 m-0 flex flex-col gap-6">
+    <section className="flex custom:pl-[72px] gap-2 custom:gap-8 lg:w-[1010px] custom:w-[1200px] mx-auto mt-10 max-w-full lg:max-w-none w-full">
+      <main className="p-0 m-0 flex flex-col gap-6 max-w-full lg:max-w-[calc(100%-290px)]">
         {/* CONTENT 1  */}
         <Paragraphs items={paragraphs} />
 
@@ -29,7 +34,9 @@ const Content = () => {
             {kepemilikanList.map((item, index) => (
               <li key={index}>
                 {item.text}
-                {item.subItems.length > 0 && <List items={item.subItems} listType={"ol"} />}
+                {item.subItems.length > 0 && (
+                  <List items={item.subItems} listType={"ol"} />
+                )}
               </li>
             ))}
           </ol>
@@ -86,20 +93,24 @@ const Content = () => {
         </div>
 
         {/* CONTENT 5  */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 max-w-full lg:max-w-none w-full">
           <Heading type={"h2"}>
             Komparasi Profit BTC vs Top 5 Saham Indonesia
           </Heading>
-          <Table />
+          <div className="max-w-full overflow-auto w-full lg:max-w-none lg:w-auto lg:overflow-hidden">
+            <Table />
+          </div>
           <Paragraphs items={paragraphs4} />
         </div>
+
+        <hr className="border border-[#D3D9E3]" />
 
         {/* TAGS  */}
         <div className="p-2 flex flex-col justify-between gap-4">
           <Paragraph type={"sm"} className="text-[#778090] font-medium">
             Tags
           </Paragraph>
-          <div className="grid grid-cols-10 gap-2.5 mx-auto w-fit">
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-8 custom:grid-cols-10 gap-2.5 mx-auto w-fit">
             {Array.from({ length: 20 }, (_, index) => (
               <div
                 key={index}
@@ -113,7 +124,7 @@ const Content = () => {
       </main>
 
       {/* LEFT SIDE  */}
-      <aside className="min-w-[258px] flex flex-col gap-6 ml-6">
+      <aside className="min-w-[258px] hidden lg:flex flex-col gap-6 ml-6">
         {/* BOX  */}
         <div className="p-6 flex flex-col gap-4 bg-[#F2F5F9] rounded-lg">
           <div className="flex flex-col gap-1">

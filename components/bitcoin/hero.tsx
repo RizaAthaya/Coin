@@ -32,7 +32,7 @@ const shareButtons = [
 
 const Hero = () => {
   return (
-    <section className="flex relative lg:w-screen justify-center items-center lg:pt-0 pt-3">
+    <section className="flex relative lg:w-screen lg:justify-center items-center lg:pt-0 pt-3">
       {/* BACKGROUND  */}
       <div className="bg-gradient-to-r from-slate-100 via-violet-50 to-pink-50 shadow w-7/12 h-[492px] z-0 lg:block hidden" />
       <div className="bg-white h-[492px] z-0 w-5/12 lg:block hidden" />

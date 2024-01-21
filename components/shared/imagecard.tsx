@@ -9,7 +9,7 @@ interface ImageCardProps {
 
 const ImageCard = ({ text, image }: ImageCardProps) => {
   return (
-    <div className="flex justify-between rounded-sm">
+    <div className="flex flex-col-reverse lg;flex-row justify-between rounded-sm">
       <div className="p-6 flex flex-col justify-between border border-[#F2F5F9]">
         <Paragraph type={"md"} className="font-semibold text-[#2B4A86]">
           {text}
@@ -18,13 +18,23 @@ const ImageCard = ({ text, image }: ImageCardProps) => {
           Coinvestasi.com
         </Paragraph>
       </div>
-      <Image
-        src={image}
-        alt={"image"}
-        width={172}
-        height={96}
-        className="rounded-br-sm rounded-tr-sm"
-      />
+      <div className="lg:block hidden">
+        <Image
+          src={image}
+          alt={"image"}
+          width={172}
+          height={96}
+          className="rounded-br-sm rounded-tr-sm"
+        />
+      </div>{" "}
+      <div className="w-full h-[300px] lg:hidden relative">
+        <Image
+          src={image}
+          alt={"image"}
+          layout="fill"
+          className="rounded-br-sm rounded-tr-sm"
+        />
+      </div>
     </div>
   );
 };

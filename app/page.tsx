@@ -10,18 +10,18 @@ import About from "@/components/bitcoin/about";
 
 export default function Home() {
   return (
-    <div className="font-semibold text-sm leading-5 bg-white w-screen lg:pb-[82px]">
+    <div className="font-semibold text-sm leading-5 bg-white w-full lg:pb-[82px] h-auto relative flex justify-center">
       {/* IMAGE MOBILE  */}
       <Image
         src={Bitcoin}
         alt={"bitcoin"}
-        className="lg:hidden block w-screen h-[356px] object-cover"
+        className="lg:hidden block w-screen h-[356px] object-cover z-0"
         width={375}
         height={356}
       />
-
-      <div className="bg-white lg:mt-0 mt-4 lg:p-0 py-6 px-4 lg:rounded-none rounded transform translate-y-[-20%] lg:transform-none lg:max-w-none max-w-[calc(100vw-32px)] mx-auto ">
-        <div className="flex lg:flex-row flex-col justify-between lg:w-[1010px] custom:w-[1200px] lg:px-0 lg:py-6 mx-auto lg:gap-0 gap-3">
+    
+      <div className="bg-white lg:mt-0 mt-4 lg:p-0 py-6 px-4 lg:rounded-none rounded top-[260px] lg:top-0 lg:max-w-none max-w-[calc(100vw-32px)] z-10 absolute lg:relative w-screen">
+        <div className="flex lg:flex-row flex-col justify-between lg:w-[1010px] custom:w-[1200px] lg:max-w-[1010px] custom:max-w-[1200px] lg:px-0 lg:py-6 mx-auto lg:gap-0 gap-3">
           {/* BREAD CRUMB  */}
           <Breadcrumb items={breadcrumbPath} />
 
@@ -42,7 +42,6 @@ export default function Home() {
 
         {/* SECTION 3 - TENTANG PENULIS  */}
         <About />
-
       </div>
     </div>
   );

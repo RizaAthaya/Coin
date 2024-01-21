@@ -22,7 +22,7 @@ const Mobile = () => {
 
       {/* SIDEBAR  */}
       <div
-        className={`lg:hidden fixed z-50 right-0 top-0 p-4 bg-white w-[70vw] min-h-screen h-auto shadow-xl transition-opacity ${
+        className={`lg:hidden fixed z-50 right-0 top-0 p-4 bg-white w-[60vw] min-h-screen h-auto shadow-xl transition-opacity ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
