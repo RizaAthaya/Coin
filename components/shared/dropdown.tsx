@@ -18,14 +18,14 @@ const Dropdown = ({ label }: DropdownProps) => {
         
       {/* LABEL  */}
       <div
-        className="flex items-center gap-[2px] cursor-pointer lg:hover:underline lg:justify-normal justify-between transition-colors duration-300"
+        className="flex items-center gap-[2px] cursor-pointer lg:hover:underline lg:justify-normal justify-between transition-colors duration-300 hover:text-[#1E386B]"
         onClick={handleDropdownClick}
       >
         {label}{" "}
         {isOpen ? (
-          <ChevronUp className="custom:w-5 custom:h-5 h-4 w-4" />
+          <ChevronUp className="custom:w-6 custom:h-6 h-4 w-4 custom:p-1" />
         ) : (
-          <ChevronDown className="custom:w-5 custom:h-5 h-4 w-4" />
+          <ChevronDown className="custom:w-6 custom:h-6 h-4 w-4 custom:p-1" />
         )}
       </div>
 

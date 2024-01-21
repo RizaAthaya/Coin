@@ -4,8 +4,84 @@
 
 body {
   font-family: var(--font-poppins);
+  overflow-x: hidden;
 }
 
-button {
+button,
+p {
   font-family: var(--font-inter);
+}
+
+.tracking-custom {
+  letter-spacing: 1%;
+}
+
+.list-lower-alpha {
+  list-style-type: lower-alpha;
+  list-style-position: outside;
+}
+
+.list-lower-roman {
+  list-style-type: lower-roman;
+  list-style-position: outside;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+article p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1%;
+}
+
+nav ul ol li {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1%;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+  }
 }

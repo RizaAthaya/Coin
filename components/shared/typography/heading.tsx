@@ -3,9 +3,10 @@ import React from "react";
 interface HeadingProps {
   children: React.ReactNode;
   type: "h1" | "h2" | "h3" | "h4";
+  className?: string;
 }
 
-const Heading = ({ children, type }: HeadingProps) => {
+const Heading = ({ children, type, className }: HeadingProps) => {
   // STYLE LIST
   const styles = {
     h1: "font-bold text-2xl leading-8 md:font-bold md:text-[32px] md:leading-[44px]",
@@ -14,10 +15,12 @@ const Heading = ({ children, type }: HeadingProps) => {
     h4: "font-bold text-sm leading-6",
   };
 
-  // GET TAG <h1/> <h2/> <h3/> <h4/> 
+  // GET TAG <h1/> <h2/> <h3/> <h4/>
   const Element = type as keyof JSX.IntrinsicElements;
 
-  return <Element className={styles[type]}>{children}</Element>;
+  return (
+    <Element className={`${styles[type]} ${className}`}>{children}</Element>
+  );
 };
 
 export default Heading;

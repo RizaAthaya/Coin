@@ -15,7 +15,7 @@ const Desktop = () => {
             {link ? (
               <Link
                 href={link}
-                className="font-medium text-sm custom:text-base leading-6"
+                className="font-medium text-sm custom:text-base leading-6 lg:hover:underline hover:text-[#1E386B]"
               >
                 {label}
               </Link>
