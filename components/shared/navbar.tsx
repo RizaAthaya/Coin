@@ -53,7 +53,7 @@ const Navbar = () => {
         scrolling ? "bg-white" : "bg-transparent"
       }`}
     >
-      <div className={`bg-transparent lg:bg-white lg:w-[1010px] custom:w-[1200px] flex justify-between lg:px-0 px-4 py-4 lg:py-6 items-center mx-auto transition-all duration-300 ease-in-out ${scrolling ? "lg:py-4": "lg:py-6"}`}>
+      <div className={`bg-transparent lg:bg-white lg:w-[1010px] custom:w-[1200px] flex justify-between lg:px-0 px-4 py-4 items-center mx-auto transition-all duration-300 ease-in-out ${scrolling ? "lg:py-4": "lg:py-6"}`}>
         {/* LOGO  */}
         <div className="w-[140px] lg:w-[182px] cursor-pointer">
           <Image src={CoinvestasiLogo} alt="Logo Coinvestasi" />
