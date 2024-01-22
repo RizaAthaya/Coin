@@ -3,7 +3,6 @@ import "./globals.css";
 import { inter, poppins } from "./fonts";
 import Navbar from "@/components/shared/navbar";
 import Head from "next/head";
-import Coin from "../public/Coin.svg";
 
 export const metadata: Metadata = {
   title: "Coinvestasi",
@@ -17,12 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
       <body className={`${poppins.variable} ${inter.variable}`}>
         {/* NAVBAR  */}
         <Navbar />
 
         {/* CONTENT  */}
-        <div>{children}</div>
+        <div className="lg:pt-20">{children}</div>
       </body>
     </html>
   );
