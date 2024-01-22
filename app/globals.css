@@ -10,6 +10,7 @@ body {
 button,
 p {
   font-family: var(--font-inter);
+  user-select: none;
 }
 
 .tracking-custom {

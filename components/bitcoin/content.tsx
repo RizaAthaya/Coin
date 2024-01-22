@@ -36,8 +36,8 @@ const Content = async () => {
   }
 
   return (
-    <section className="flex custom:pl-[72px] gap-2 custom:gap-8 lg:w-[1010px] custom:w-[1200px] mx-auto mt-10 max-w-full lg:max-w-none w-full">
-      <main className="p-0 m-0 flex flex-col gap-6 max-w-full lg:max-w-[calc(100%-290px)]">
+    <article className="flex custom:pl-[72px] gap-2 custom:gap-8 lg:w-[1010px] custom:w-[1200px] mx-auto mt-10 max-w-full lg:max-w-none w-full">
+      <div className="p-0 m-0 flex flex-col gap-6 max-w-full lg:max-w-[calc(100%-290px)] select-none">
         {/* CONTENT 1  */}
         <Paragraphs items={paragraphs} />
 
@@ -127,7 +127,7 @@ const Content = async () => {
           <Paragraph type={"sm"} className="text-[#778090] font-medium">
             Tags
           </Paragraph>
-          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-8 custom:grid-cols-10 gap-2.5 mx-auto w-fit">
+          <div className="sm:grid grid-cols-4 flex justify-between flex-wrap sm:grid-cols-8 md:grid-cols-12 lg:grid-cols-8 custom:grid-cols-10 gap-2.5 mx-auto w-fit">
             {Array.from({ length: 20 }, (_, index) => (
               <div
                 key={index}
@@ -138,7 +138,7 @@ const Content = async () => {
             ))}
           </div>
         </div>
-      </main>
+      </div>
 
       {/* LEFT SIDE  */}
       <aside className="min-w-[258px] hidden lg:flex flex-col gap-6 ml-6">
@@ -187,6 +187,7 @@ const Content = async () => {
             );
           })}
         </div>
+
         {/* TOPIK - TAGS  */}
         <div className="flex flex-col gap-4">
           <Heading type={"h2"}>Topik lainnya</Heading>
@@ -205,7 +206,7 @@ const Content = async () => {
               <Paragraph
                 key={index}
                 type={"caption"}
-                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2 w-fit"
+                className="text-[#43464D] bg-[#F8F8F8] rounded-[37px] font-medium p-2 w-fit cursor-pointer hover:underline"
               >
                 {topic}
               </Paragraph>
@@ -213,7 +214,7 @@ const Content = async () => {
           </div>
         </div>
       </aside>
-    </section>
+    </article>
   );
 };
 

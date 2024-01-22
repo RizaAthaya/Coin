@@ -10,7 +10,6 @@ export async function getData(id: number) {
 
     return res.json();
   } catch (error) {
-    console.error("Error fetching data:", error);
   }
 }
 
@@ -26,7 +25,6 @@ export async function getName(id: number) {
 
     return res.json();
   } catch (error) {
-    console.error("Error fetching data:", error);
   }
 }
 
@@ -42,6 +40,5 @@ export async function getAuthor(id: number) {
 
     return res.json();
   } catch (error) {
-    console.error("Error fetching data:", error);
   }
 }
