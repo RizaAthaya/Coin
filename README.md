@@ -24,13 +24,11 @@ npm install
 
 ```bash
 
-npm install
+npm run dev
 
 ```
 
 - Now, you can open [http://localhost:3000](http://localhost:3000) in your web browser!
-
-<br></br>
 
 ## 🚀 Preview
 
